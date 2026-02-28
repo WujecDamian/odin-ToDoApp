@@ -13,7 +13,3 @@ export function createProject (projectName) {
   saveProjectLocalStorage(projects)
   return project
 }
-
-export function getProjects () {
-  return [...projects]
-}

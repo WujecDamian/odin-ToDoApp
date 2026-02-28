@@ -24,7 +24,3 @@ export function createTask (
   saveTaskLocalStorage(tasks)
   return task
 }
-
-export function getTasks () {
-  return [...tasks]
-}
