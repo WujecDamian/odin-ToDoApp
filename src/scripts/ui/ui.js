@@ -1,5 +1,7 @@
 /* this module puts dom elements on screen */
 import { projectModal } from './ui/projectModal.js'
+import { taskModal } from './ui/taskModal.js'
+
 /* )      )      )      )      )   what I need?> */
 /* modal (dialog - .showModal(), close()) to create projects */
 export function openProjectModal () {
@@ -7,6 +9,13 @@ export function openProjectModal () {
 }
 export function closeProjectModal () {
   projectModal.close()
+}
+/* task modal */
+export function openTaskModal () {
+  taskModal.showModal()
+}
+export function closeTaskModal () {
+  taskModal.close()
 }
 /* modal to create tasks */
 /* function to render projects */
