@@ -7,6 +7,7 @@ projectForm.method = 'dialog'
 const inputName = document.createElement('input')
 inputName.type = 'text'
 inputName.className = 'project__name'
+inputName.required = true
 const addButton = document.createElement('input')
 addButton.type = 'submit'
 addButton.value = 'Add'
