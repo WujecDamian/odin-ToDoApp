@@ -13,4 +13,6 @@ addButton.value = 'Add'
 addButton.className = 'project__button'
 /* appends */
 projectForm.appendChild(inputName)
+projectForm.appendChild(addButton)
 projectModal.appendChild(projectForm)
+document.body.appendChild(projectModal)
