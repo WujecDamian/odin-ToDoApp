@@ -1,5 +1,5 @@
 /* this module puts dom elements on screen */
-import { projectModal } from './ui/projectModal'
+import { projectModal } from './ui/projectModal.js'
 /* )      )      )      )      )   what I need?> */
 /* modal (dialog - .showModal(), close()) to create projects */
 export function openProjectModal () {
