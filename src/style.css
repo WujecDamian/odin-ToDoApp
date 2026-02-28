@@ -5,12 +5,15 @@
 }
 body {
   display: grid;
-  grid-template: 1fr 9fr / 3fr 9fr;
+  grid-template: 50px auto / 3fr 9fr;
   max-height: 100vh;
+  min-height: 100vh;
 }
 header {
+  display: flex;
+  justify-content: end;
   grid-area: 1/1/2/3;
-  padding: 3rem;
+  padding: 1rem;
   background-color: lightskyblue;
 }
 aside {
