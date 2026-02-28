@@ -13,3 +13,9 @@ export function createTask (projectName, title, description, dueDate) {
     notes: '' //User will be able to add notes (for now empty)
   }
 }
+
+export function logTask (task) {
+  tasks.forEach(i => {
+    console.log(tasks[i])
+  })
+}
