@@ -4,4 +4,22 @@
   box-sizing: border-box;
 }
 body {
+  display: grid;
+  grid-template: 1fr 9fr / 3fr 9fr;
+  max-height: 100vh;
+}
+header {
+  grid-area: 1/1/2/3;
+  padding: 3rem;
+  background-color: lightskyblue;
+}
+aside {
+  grid-area: 2/1/3/2;
+  padding: 3rem;
+  background-color: lightblue;
+}
+main {
+  grid-area: 2/2/-1/-1;
+  padding: 3rem;
+  background-color: lightsteelblue;
 }
