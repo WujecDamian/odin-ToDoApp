@@ -23,3 +23,8 @@ main {
   padding: 3rem;
   background-color: lightsteelblue;
 }
+dialog {
+  align-self: center;
+  justify-self: center;
+  padding: 3rem;
+}
