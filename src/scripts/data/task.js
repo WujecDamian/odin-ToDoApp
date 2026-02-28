@@ -1,21 +1,29 @@
 /* everything related to task [CRUD] */
 
 /* create task object factory  */
-export let tasks = []
+let tasks = []
 
-export function createTask (projectName, title, description, dueDate) {
-  return {
-    projectName: projectName,
-    title: title,
-    description: description,
-    dueDate: dueDate,
+export function createTask (
+  projectName,
+  title,
+  description = '',
+  dueDate = null
+) {
+  const task = {
+    id: crypto.randomUUID(),
+    projectName,
+    title,
+    description,
+    dueDate,
     creationDate: '/* function from date.js */',
-    notes: '' //User will be able to add notes (for now empty)
+    notes: '', //User will be able to add notes (for now empty)
+    isCompleted: false
   }
+  tasks = [...tasks, task]
+  /* save to localstorage here */
+  return task
 }
 
-export function logTask (task) {
-  tasks.forEach(i => {
-    console.log(tasks[i])
-  })
+export function getTasks () {
+  return [...tasks]
 }
