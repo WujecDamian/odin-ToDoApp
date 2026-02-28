@@ -1,5 +1,5 @@
 /* everything related to task [CRUD] */
-
+import { saveTaskLocalStorage } from './storage.js'
 /* create task object factory  */
 let tasks = []
 
@@ -21,6 +21,7 @@ export function createTask (
   }
   tasks = [...tasks, task]
   /* save to localstorage here */
+  saveTaskLocalStorage(tasks)
   return task
 }
 
