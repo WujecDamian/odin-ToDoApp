@@ -1,7 +1,7 @@
 //put inside src/index.js
-import './styles.css'
-import { createTask, logTask } from './scripts/data/task.js'
-
-/* test tasks.js */
-tasks.push(createTask('projecttest', 'titletest', 'desctst', 'dueTest'))
-logTask()
+import './style.css'
+import { createTask, getTasks } from './scripts/data/task.js'
+addEventListener('DOMContentLoaded', event => {
+  createTask('projecttest', 'titletest', 'desctst', 'dueTest')
+  console.log(getTasks())
+})
