@@ -1,0 +1,42 @@
+import { getProjectsFromLocalStorage } from '../../data/storage.js'
+let projects = getProjectsFromLocalStorage()
+/* modal for project */
+export const taskModal = document.createElement('dialog')
+taskModal.className = 'task__modal'
+const taskForm = document.createElement('form')
+taskForm.className = 'task__form'
+taskForm.method = 'dialog'
+/* select project */
+const selectProject = document.createElement('select')
+selectProject.className = 'task__select'
+projects.forEach(element => {
+  const option = document.createElement('option')
+  option.value = element.projectName
+  option.innerText = element.projectName
+  selectProject.appendChild(option)
+})
+/*  */
+const inputTitle = document.createElement('input')
+inputTitle.type = 'text'
+inputTitle.className = 'task__title'
+inputTitle.required = true
+const inputDescription = document.createElement('input')
+inputDescription.type = 'text'
+inputDescription.className = 'task__description'
+inputDescription.required = true
+const inputDueDate = document.createElement('input')
+inputDueDate.type = 'date'
+inputDueDate.className = 'task__dueDate'
+inputDueDate.required = true
+const addButton = document.createElement('input')
+addButton.type = 'submit'
+addButton.value = 'Add'
+addButton.className = 'task__button'
+/* appends */
+taskForm.appendChild(selectProject)
+taskForm.appendChild(inputTitle)
+taskForm.appendChild(inputDescription)
+taskForm.appendChild(inputDueDate)
+taskForm.appendChild(addButton)
+taskModal.appendChild(taskForm)
+document.body.appendChild(taskModal)
