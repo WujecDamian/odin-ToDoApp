@@ -1,5 +1,14 @@
-import { getProjectsFromLocalStorage } from '../../data/storage.js'
-let projects = getProjectsFromLocalStorage()
+import {
+  getProjectsFromLocalStorage,
+  getTasksFromLocalStorage
+} from '../../data/storage.js'
+import { createTask } from '../../data/task.js'
+import { loadProject } from '../../data/project.js'
+let projects = getProjectsFromLocalStorage() || []
+if (projects.length === 0) {
+  loadProject()
+}
+
 /* modal for project */
 export const taskModal = document.createElement('dialog')
 taskModal.className = 'task__modal'
@@ -40,3 +49,19 @@ taskForm.appendChild(inputDueDate)
 taskForm.appendChild(addButton)
 taskModal.appendChild(taskForm)
 document.body.appendChild(taskModal)
+/* addbutton call function */
+addButton.addEventListener('click', () => {
+  createTask(
+    selectProject.value,
+    inputTitle.value,
+    inputDescription.value,
+    inputDueDate.value
+  )
+  console.log(
+    selectProject.value,
+    inputTitle.value,
+    inputDescription.value,
+    inputDueDate.value
+  )
+  console.log(getTasksFromLocalStorage())
+})
