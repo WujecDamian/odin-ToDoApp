@@ -16,7 +16,7 @@ export function createTask (
     description,
     dueDate,
     creationDate: '/* function from date.js */',
-    notes: '', //User will be able to add notes (for now empty)
+    notes, //User will be able to add notes (for now empty)
     isCompleted: false
   }
   tasks = [...tasks, task]

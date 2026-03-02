@@ -1,6 +1,7 @@
 import { getTasksFromLocalStorage } from '../../data/storage.js'
 import { deleteTask } from './deleteTask.js'
 import { isTaskCompleted } from './isTaskCompleted.js'
+import { addNote } from './noteModal.js'
 export function renderTasks () {
   const tasksList = document.querySelector('.tasks__list')
   let tasks = getTasksFromLocalStorage() || []
@@ -44,6 +45,7 @@ export function renderTasks () {
     taskNote.type = 'button'
     taskNote.className = 'task__note'
     taskNote.value = 'note'
+    taskNote.addEventListener('click', addNote)
     const taskDelete = document.createElement('input')
     taskDelete.type = 'button'
     taskDelete.className = 'task__delete'
