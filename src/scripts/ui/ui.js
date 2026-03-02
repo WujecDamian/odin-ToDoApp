@@ -1,6 +1,7 @@
 /* this module puts dom elements on screen */
 import { projectModal, projectFormReset } from './ui/projectModal.js'
 import { renderProjects } from './ui/renderProjects.js'
+import { renderTasks } from './ui/renderTasks.js'
 import { taskModal, taskFormReset } from './ui/taskModal.js'
 /* )      )      )      )      )   what I need?> */
 /* modal (dialog - .showModal(), close()) to create projects */
@@ -26,6 +27,7 @@ export function closeTaskModal () {
 renderProjects()
 
 /* function to render tasks */
+renderTasks()
 /* function to delete projects */
 /* function to delete tasks */
 /* function to check that task is completed */
