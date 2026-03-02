@@ -1,57 +1,57 @@
 import { getTasksFromLocalStorage } from '../../data/storage.js'
+import { deleteTask } from './deleteTask.js'
 export function renderTasks () {
   const tasksList = document.querySelector('.tasks__list')
   let tasks = getTasksFromLocalStorage() || []
-  if (tasks.length > 0) {
-    tasksList.replaceChildren()
-    tasks.forEach(element => {
-      const taskEl = document.createElement('div')
-      taskEl.className = 'task__element'
-      tasksList.appendChild(taskEl)
-      /* text wrapper */
-      const taskTextWrapper = document.createElement('div')
-      taskTextWrapper.className = 'task__text-wrapper'
-      const taskTitle = document.createElement('h2')
-      taskTitle.className = 'task__title'
-      taskTitle.innerText = element.title
-      const taskDescription = document.createElement('h4')
-      taskDescription.className = 'task__description'
-      taskDescription.innerText = element.description
-      const taskCreationDate = document.createElement('span')
-      taskCreationDate.className = 'task__creationdate'
-      taskCreationDate.innerText = element.creationDate
-      const taskDueDate = document.createElement('span')
-      taskDueDate.className = 'task__duedate'
-      taskDueDate.innerText = element.dueDate
-      /* button wrapper */
-      const taskButtonsWrapper = document.createElement('div')
-      taskButtonsWrapper.className = 'task__buttons-wrapper'
-      const taskCheckbox = document.createElement('input')
-      taskCheckbox.type = 'checkbox'
-      taskCheckbox.className = 'task__checkbox'
-      const actionButtonWrapper = document.createElement('div')
-      actionButtonWrapper.className = 'task__actionbuttons-wrapper'
-      const taskNote = document.createElement('input')
-      taskNote.type = 'button'
-      taskNote.className = 'task__note'
-      taskNote.value = 'note'
-      const taskDelete = document.createElement('input')
-      taskDelete.type = 'button'
-      taskDelete.className = 'task__delete'
-      taskDelete.value = 'Delete'
-      /* appends */
-      taskTextWrapper.append(
-        taskTitle,
-        taskDescription,
-        taskCreationDate,
-        taskDueDate
-      )
-      actionButtonWrapper.append(taskNote, taskDelete)
-      taskButtonsWrapper.append(taskCheckbox, actionButtonWrapper)
-      taskEl.append(taskTextWrapper, taskButtonsWrapper)
-      tasksList.appendChild(taskEl)
-    })
-  }
+  tasksList.replaceChildren()
+  tasks.forEach(element => {
+    const taskEl = document.createElement('div')
+    taskEl.className = 'task__element'
+    tasksList.appendChild(taskEl)
+    /* text wrapper */
+    const taskTextWrapper = document.createElement('div')
+    taskTextWrapper.className = 'task__text-wrapper'
+    const taskTitle = document.createElement('h2')
+    taskTitle.className = 'task__title'
+    taskTitle.innerText = element.title
+    const taskDescription = document.createElement('h4')
+    taskDescription.className = 'task__description'
+    taskDescription.innerText = element.description
+    const taskCreationDate = document.createElement('span')
+    taskCreationDate.className = 'task__creationdate'
+    taskCreationDate.innerText = element.creationDate
+    const taskDueDate = document.createElement('span')
+    taskDueDate.className = 'task__duedate'
+    taskDueDate.innerText = element.dueDate
+    /* button wrapper */
+    const taskButtonsWrapper = document.createElement('div')
+    taskButtonsWrapper.className = 'task__buttons-wrapper'
+    const taskCheckbox = document.createElement('input')
+    taskCheckbox.type = 'checkbox'
+    taskCheckbox.className = 'task__checkbox'
+    const actionButtonWrapper = document.createElement('div')
+    actionButtonWrapper.className = 'task__actionbuttons-wrapper'
+    const taskNote = document.createElement('input')
+    taskNote.type = 'button'
+    taskNote.className = 'task__note'
+    taskNote.value = 'note'
+    const taskDelete = document.createElement('input')
+    taskDelete.type = 'button'
+    taskDelete.className = 'task__delete'
+    taskDelete.value = 'Delete'
+    taskDelete.addEventListener('click', deleteTask)
+    /* appends */
+    taskTextWrapper.append(
+      taskTitle,
+      taskDescription,
+      taskCreationDate,
+      taskDueDate
+    )
+    actionButtonWrapper.append(taskNote, taskDelete)
+    taskButtonsWrapper.append(taskCheckbox, actionButtonWrapper)
+    taskEl.append(taskTextWrapper, taskButtonsWrapper)
+    tasksList.appendChild(taskEl)
+  })
 }
 
 /* TODO: use map.filter() to filter only tasks from getActiveProject() activeproject parameter - this function does not exist. create one.*/
