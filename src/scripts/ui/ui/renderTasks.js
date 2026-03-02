@@ -14,7 +14,7 @@ export function renderTasks () {
       const taskTitle = document.createElement('h2')
       taskTitle.className = 'task__title'
       taskTitle.innerText = element.title
-      const taskDescription = document.createElement('h3')
+      const taskDescription = document.createElement('h4')
       taskDescription.className = 'task__description'
       taskDescription.innerText = element.description
       const taskCreationDate = document.createElement('span')
@@ -26,7 +26,19 @@ export function renderTasks () {
       /* button wrapper */
       const taskButtonsWrapper = document.createElement('div')
       taskButtonsWrapper.className = 'task__buttons-wrapper'
-
+      const taskCheckbox = document.createElement('input')
+      taskCheckbox.type = 'checkbox'
+      taskCheckbox.className = 'task__checkbox'
+      const actionButtonWrapper = document.createElement('div')
+      actionButtonWrapper.className = 'task__actionbuttons-wrapper'
+      const taskNote = document.createElement('input')
+      taskNote.type = 'button'
+      taskNote.className = 'task__note'
+      taskNote.value = 'note'
+      const taskDelete = document.createElement('input')
+      taskDelete.type = 'button'
+      taskDelete.className = 'task__delete'
+      taskDelete.value = 'Delete'
       /* appends */
       taskTextWrapper.append(
         taskTitle,
@@ -34,7 +46,9 @@ export function renderTasks () {
         taskCreationDate,
         taskDueDate
       )
-      taskEl.appendChild(taskTextWrapper)
+      actionButtonWrapper.append(taskNote, taskDelete)
+      taskButtonsWrapper.append(taskCheckbox, actionButtonWrapper)
+      taskEl.append(taskTextWrapper, taskButtonsWrapper)
       tasksList.appendChild(taskEl)
     })
   }

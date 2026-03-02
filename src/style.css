@@ -54,3 +54,24 @@ dialog {
   padding: 0.25rem;
   text-indent: 1rem;
 }
+.task__element {
+  display: flex;
+  gap: 1rem;
+  color: white;
+  background-color: rgb(65, 65, 70);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.task__text-wrapper {
+}
+.task__buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.task__checkbox {
+  width: 3rem;
+  aspect-ratio: 1/1;
+}
+.task__actionbuttons-wrapper {
+  display: flex;
+}
