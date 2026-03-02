@@ -1,5 +1,6 @@
 import { getTasksFromLocalStorage } from '../../data/storage.js'
 import { deleteTask } from './deleteTask.js'
+import { isTaskCompleted } from './isTaskCompleted.js'
 export function renderTasks () {
   const tasksList = document.querySelector('.tasks__list')
   let tasks = getTasksFromLocalStorage() || []
@@ -29,6 +30,8 @@ export function renderTasks () {
     const taskCheckbox = document.createElement('input')
     taskCheckbox.type = 'checkbox'
     taskCheckbox.className = 'task__checkbox'
+    taskCheckbox.addEventListener('click', isTaskCompleted)
+
     const actionButtonWrapper = document.createElement('div')
     actionButtonWrapper.className = 'task__actionbuttons-wrapper'
     const taskNote = document.createElement('input')

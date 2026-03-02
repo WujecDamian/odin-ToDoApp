@@ -27,8 +27,8 @@ export function closeTaskModal () {
 renderProjects()
 /* function to render tasks */
 renderTasks()
-/* function to delete projects */
+/* function to delete projects [GOOD]*/
 
-/* function to delete tasks */
+/* function to delete tasks [GOOD]*/
 /* function to check that task is completed */
 /* function to add note to task (it opens box and you can modify there or just read (so no need to add read note function)*/
