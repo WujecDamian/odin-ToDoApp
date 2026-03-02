@@ -9,7 +9,9 @@ export function deleteProject (e) {
   const deleteButtons = document.querySelectorAll('.project__delete')
   projectsList = Array.from(projectsList)
   let indexOfProject = projectsList.indexOf(e.target.parentElement)
-  projects.splice(indexOfProject, 1)
-  saveProjectLocalStorage(projects)
-  renderProjects()
+  if (projects.length > 1) {
+    projects.splice(indexOfProject, 1)
+    saveProjectLocalStorage(projects)
+    renderProjects()
+  }
 }
