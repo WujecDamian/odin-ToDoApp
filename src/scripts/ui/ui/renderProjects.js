@@ -1,4 +1,5 @@
 import { getProjectsFromLocalStorage } from '../../data/storage.js'
+import { deleteProject } from './deleteproject.js'
 export function renderProjects () {
   const projectsList = document.querySelector('.projects__list')
   let projects = getProjectsFromLocalStorage()
@@ -13,6 +14,7 @@ export function renderProjects () {
     projectDelete.type = 'button'
     projectDelete.className = 'project__delete'
     projectDelete.value = 'Delete'
+    projectDelete.addEventListener('click', deleteProject)
     projectEl.append(projectText)
     projectEl.append(projectDelete)
     projectsList.appendChild(projectEl)
