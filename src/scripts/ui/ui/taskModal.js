@@ -56,11 +56,9 @@ addButton.addEventListener('click', () => {
     inputDescription.value,
     inputDueDate.value
   )
-  console.log(
-    selectProject.value,
-    inputTitle.value,
-    inputDescription.value,
-    inputDueDate.value
-  )
   console.log(getTasksFromLocalStorage())
 })
+
+export function taskFormReset () {
+  taskForm.reset()
+}
