@@ -1,3 +1,4 @@
+import { createProject } from '../../data/project.js'
 /* modal for project */
 export const projectModal = document.createElement('dialog')
 projectModal.className = 'project__modal'
@@ -17,3 +18,13 @@ projectForm.appendChild(inputName)
 projectForm.appendChild(addButton)
 projectModal.appendChild(projectForm)
 document.body.appendChild(projectModal)
+
+addButton.addEventListener('click', () => {
+  if (inputName.value != '') {
+    createProject(inputName.value)
+  }
+})
+
+export function projectFormReset () {
+  projectForm.reset()
+}

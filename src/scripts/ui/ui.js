@@ -1,11 +1,12 @@
 /* this module puts dom elements on screen */
-import { projectModal } from './ui/projectModal.js'
+import { projectModal, projectFormReset } from './ui/projectModal.js'
 import { taskModal, taskFormReset } from './ui/taskModal.js'
 
 /* )      )      )      )      )   what I need?> */
 /* modal (dialog - .showModal(), close()) to create projects */
 export function openProjectModal () {
   projectModal.showModal()
+  projectFormReset()
 }
 export function closeProjectModal () {
   projectModal.close()
