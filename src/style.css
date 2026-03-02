@@ -49,10 +49,20 @@ dialog {
   font-size: 2rem;
 }
 .project__element {
+  display: flex;
   cursor: pointer;
   border-bottom: 1px solid white;
-  padding: 0.25rem;
+  padding: 0.5rem;
   text-indent: 1rem;
+  margin-right: auto;
+}
+.project__text {
+}
+.project__delete {
+  cursor: pointer;
+  margin-left: auto;
+  padding: 0.25rem 0.5rem;
+  border: none;
 }
 .task__element {
   display: flex;

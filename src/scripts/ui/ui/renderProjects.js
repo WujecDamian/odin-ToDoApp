@@ -4,9 +4,17 @@ export function renderProjects () {
   let projects = getProjectsFromLocalStorage()
   projectsList.replaceChildren()
   projects.forEach(element => {
-    const projectEl = document.createElement('p')
+    const projectEl = document.createElement('div')
     projectEl.className = 'project__element'
-    projectEl.innerText = element.projectName
+    const projectText = document.createElement('span')
+    projectText.innerText = element.projectName
+    projectText.className = 'project__text'
+    const projectDelete = document.createElement('input')
+    projectDelete.type = 'button'
+    projectDelete.className = 'project__delete'
+    projectDelete.value = 'Delete'
+    projectEl.append(projectText)
+    projectEl.append(projectDelete)
     projectsList.appendChild(projectEl)
   })
 }

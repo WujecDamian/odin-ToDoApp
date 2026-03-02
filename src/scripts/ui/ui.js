@@ -25,10 +25,10 @@ export function closeTaskModal () {
 
 /* function to render projects */
 renderProjects()
-
 /* function to render tasks */
 renderTasks()
 /* function to delete projects */
+
 /* function to delete tasks */
 /* function to check that task is completed */
 /* function to add note to task (it opens box and you can modify there or just read (so no need to add read note function)*/
