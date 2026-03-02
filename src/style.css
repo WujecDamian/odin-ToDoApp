@@ -48,3 +48,8 @@ dialog {
 .projects__heading {
   font-size: 2rem;
 }
+.project__element {
+  border-bottom: 1px solid white;
+  padding: 0.25rem;
+  text-indent: 1rem;
+}
