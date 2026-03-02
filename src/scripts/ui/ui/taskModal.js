@@ -4,6 +4,7 @@ import {
 } from '../../data/storage.js'
 import { createTask } from '../../data/task.js'
 import { loadProject } from '../../data/project.js'
+import { renderTasks } from './renderTasks.js'
 let projects = getProjectsFromLocalStorage() || []
 
 /* modal for project */
@@ -62,6 +63,8 @@ addButton.addEventListener('click', () => {
       inputDescription.value,
       inputDueDate.value
     )
+    renderTasks()
+
     console.log(getTasksFromLocalStorage())
   }
 })
