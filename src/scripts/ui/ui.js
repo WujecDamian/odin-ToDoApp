@@ -21,8 +21,10 @@ export function openTaskModal () {
 export function closeTaskModal () {
   taskModal.close()
 }
+
 /* function to render projects */
 renderProjects()
+
 /* function to render tasks */
 /* function to delete projects */
 /* function to delete tasks */

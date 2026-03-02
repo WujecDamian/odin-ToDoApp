@@ -1,4 +1,5 @@
 import { createProject } from '../../data/project.js'
+import { renderProjects } from './renderProjects.js'
 /* modal for project */
 export const projectModal = document.createElement('dialog')
 projectModal.className = 'project__modal'
@@ -22,6 +23,7 @@ document.body.appendChild(projectModal)
 addButton.addEventListener('click', () => {
   if (inputName.value != '') {
     createProject(inputName.value)
+    renderProjects()
   }
 })
 

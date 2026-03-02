@@ -2,7 +2,7 @@ import { getProjectsFromLocalStorage } from '../../data/storage.js'
 export function renderProjects () {
   const projectsList = document.querySelector('.projects__list')
   let projects = getProjectsFromLocalStorage()
-
+  projectsList.replaceChildren()
   projects.forEach(element => {
     const projectEl = document.createElement('p')
     projectEl.className = 'project__element'
