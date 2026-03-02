@@ -2,7 +2,8 @@ import {
   openProjectModal,
   closeProjectModal,
   openTaskModal,
-  closeTaskModal
+  closeTaskModal,
+  openNoteModal
 } from './ui.js'
 import {
   getProjectsFromLocalStorage,
@@ -14,3 +15,8 @@ addTaskBtn.addEventListener('click', openTaskModal)
 
 const addProjectBtn = document.querySelector('#button-project')
 addProjectBtn.addEventListener('click', openProjectModal)
+
+const addNoteBtn = document.querySelectorAll('.task__note')
+addNoteBtn.forEach(element => {
+  element.addEventListener('click', openNoteModal)
+})
