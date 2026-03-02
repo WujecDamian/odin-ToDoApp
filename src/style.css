@@ -49,6 +49,7 @@ dialog {
   font-size: 2rem;
 }
 .project__element {
+  cursor: pointer;
   border-bottom: 1px solid white;
   padding: 0.25rem;
   text-indent: 1rem;
