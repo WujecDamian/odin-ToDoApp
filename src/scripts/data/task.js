@@ -1,7 +1,7 @@
 /* everything related to task [CRUD] */
-import { saveTaskLocalStorage } from './storage.js'
+import { saveTaskLocalStorage, getTasksFromLocalStorage } from './storage.js'
 /* create task object factory  */
-let tasks = []
+let tasks = getTasksFromLocalStorage() || []
 
 export function createTask (
   projectName,

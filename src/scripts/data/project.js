@@ -1,9 +1,13 @@
 /* everything related to project [CRUD] */
-import { saveProjectLocalStorage } from './storage.js'
+import {
+  saveProjectLocalStorage,
+  getProjectsFromLocalStorage
+} from './storage.js'
 
-/* create project object factory  */
-let projects = []
-
+let projects = getProjectsFromLocalStorage() || []
+if (projects.length === 0) {
+  createProject('General')
+}
 export function createProject (projectName) {
   const project = {
     id: crypto.randomUUID(),
