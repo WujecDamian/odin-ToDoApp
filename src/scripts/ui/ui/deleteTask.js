@@ -11,9 +11,6 @@ export function deleteTask (e) {
   let indexOfTask = TasksList.indexOf(
     e.target.parentElement.parentElement.parentElement
   )
-  console.log(indexOfTask)
-  console.log(e.target)
-
   Tasks.splice(indexOfTask, 1)
   saveTaskLocalStorage(Tasks)
   renderTasks()
