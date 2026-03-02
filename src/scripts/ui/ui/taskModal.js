@@ -50,13 +50,20 @@ taskModal.appendChild(taskForm)
 document.body.appendChild(taskModal)
 /* addbutton call function */
 addButton.addEventListener('click', () => {
-  createTask(
-    selectProject.value,
-    inputTitle.value,
-    inputDescription.value,
-    inputDueDate.value
-  )
-  console.log(getTasksFromLocalStorage())
+  if (
+    selectProject.value != '' &&
+    inputTitle.value != '' &&
+    inputDescription.value != '' &&
+    inputDueDate.value != ''
+  ) {
+    createTask(
+      selectProject.value,
+      inputTitle.value,
+      inputDescription.value,
+      inputDueDate.value
+    )
+    console.log(getTasksFromLocalStorage())
+  }
 })
 
 export function taskFormReset () {
