@@ -3,17 +3,10 @@ import {
   saveProjectLocalStorage,
   getProjectsFromLocalStorage
 } from './storage.js'
-export function loadProject () {
-  /* create project object factory  */
-  let projects = getProjectsFromLocalStorage() || []
-  console.log(projects)
-  if (projects.length === 0) {
-    const project = {
-      id: crypto.randomUUID(),
-      projectName: 'General'
-    }
-    saveProjectLocalStorage(project) // ← tu zapisujesz
-  }
+
+let projects = getProjectsFromLocalStorage() || []
+if (projects.length === 0) {
+  createProject('General')
 }
 export function createProject (projectName) {
   const project = {

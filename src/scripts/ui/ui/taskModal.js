@@ -5,9 +5,6 @@ import {
 import { createTask } from '../../data/task.js'
 import { loadProject } from '../../data/project.js'
 let projects = getProjectsFromLocalStorage() || []
-if (projects.length === 0) {
-  loadProject()
-}
 
 /* modal for project */
 export const taskModal = document.createElement('dialog')
@@ -18,12 +15,14 @@ taskForm.method = 'dialog'
 /* select project */
 const selectProject = document.createElement('select')
 selectProject.className = 'task__select'
-projects.forEach(element => {
-  const option = document.createElement('option')
-  option.value = element.projectName
-  option.innerText = element.projectName
-  selectProject.appendChild(option)
-})
+if (projects.length > 0) {
+  projects.forEach(element => {
+    const option = document.createElement('option')
+    option.value = element.projectName
+    option.innerText = element.projectName
+    selectProject.appendChild(option)
+  })
+}
 /*  */
 const inputTitle = document.createElement('input')
 inputTitle.type = 'text'
