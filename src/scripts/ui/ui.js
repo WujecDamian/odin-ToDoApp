@@ -30,5 +30,5 @@ renderTasks()
 /* function to delete projects [GOOD]*/
 
 /* function to delete tasks [GOOD]*/
-/* function to check that task is completed */
+/* function to check that task is completed [GOOD]*/
 /* function to add note to task (it opens box and you can modify there or just read (so no need to add read note function)*/

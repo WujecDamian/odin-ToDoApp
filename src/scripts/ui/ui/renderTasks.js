@@ -31,7 +31,11 @@ export function renderTasks () {
     taskCheckbox.type = 'checkbox'
     taskCheckbox.className = 'task__checkbox'
     taskCheckbox.addEventListener('click', isTaskCompleted)
-
+    if (element.isCompleted === true) {
+      taskCheckbox.checked = true
+    } else if (element.isCompleted === false) {
+      taskCheckbox.checked = false
+    }
     const actionButtonWrapper = document.createElement('div')
     actionButtonWrapper.className = 'task__actionbuttons-wrapper'
     const taskNote = document.createElement('input')
