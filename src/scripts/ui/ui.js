@@ -11,6 +11,8 @@ export function openProjectModal () {
 export function closeProjectModal () {
   projectModal.close()
 }
+
+/* modal to create tasks */
 /* task modal */
 export function openTaskModal () {
   taskModal.showModal()
@@ -19,8 +21,8 @@ export function openTaskModal () {
 export function closeTaskModal () {
   taskModal.close()
 }
-/* modal to create tasks */
 /* function to render projects */
+
 /* function to render tasks */
 /* function to delete projects */
 /* function to delete tasks */
