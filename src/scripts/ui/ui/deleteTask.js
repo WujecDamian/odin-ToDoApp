@@ -3,6 +3,7 @@ import {
   saveTaskLocalStorage
 } from '../../data/storage.js'
 import { renderTasks } from './renderTasks.js'
+import { tasks } from '../../data/task.js'
 export function deleteTask (e) {
   let Tasks = getTasksFromLocalStorage()
   let TasksList = document.querySelectorAll('.task__element')
@@ -13,5 +14,8 @@ export function deleteTask (e) {
   )
   Tasks.splice(indexOfTask, 1)
   saveTaskLocalStorage(Tasks)
+  // Very important – sync the global variable too
+  tasks.length = 0 // clear
+  tasks.push(...Tasks) // copy new content
   renderTasks()
 }
