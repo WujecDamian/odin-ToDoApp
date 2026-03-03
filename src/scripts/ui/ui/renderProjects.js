@@ -1,5 +1,6 @@
 import { getProjectsFromLocalStorage } from '../../data/storage.js'
 import { deleteProject } from './deleteProject.js'
+import { setActiveProject } from './setActiveProject.js'
 export function renderProjects () {
   const projectsList = document.querySelector('.projects__list')
   let projects = getProjectsFromLocalStorage()
@@ -18,5 +19,8 @@ export function renderProjects () {
     projectEl.append(projectText)
     projectEl.append(projectDelete)
     projectsList.appendChild(projectEl)
+    let activeProject = projects[0].projectName
+
+    projectEl.addEventListener('click', setActiveProject)
   })
 }

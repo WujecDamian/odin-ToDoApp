@@ -72,9 +72,10 @@ dialog {
   display: flex;
   gap: 1rem;
   color: white;
-  background-color: rgb(65, 65, 70);
+  background-color: rgba(65, 65, 70, 0.226);
   padding: 1rem;
   border-radius: 1rem;
+  margin-bottom: 1rem;
 }
 .task__text-wrapper {
 }
@@ -87,7 +88,8 @@ dialog {
   aspect-ratio: 1/1;
 }
 .completed {
-  filter: contrast(0.3);
+  opacity: 0.3;
+  filter: grayscale(0.5);
 }
 .task__actionbuttons-wrapper {
   display: flex;

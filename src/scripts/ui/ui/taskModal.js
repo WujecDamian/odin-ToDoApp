@@ -64,8 +64,6 @@ addButton.addEventListener('click', () => {
       inputDueDate.value
     )
     renderTasks()
-
-    console.log(getTasksFromLocalStorage())
   }
 })
 

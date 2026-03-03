@@ -1,12 +1,28 @@
-import { getTasksFromLocalStorage } from '../../data/storage.js'
+import {
+  getTasksFromLocalStorage,
+  getProjectsFromLocalStorage
+} from '../../data/storage.js'
 import { deleteTask } from './deleteTask.js'
 import { isTaskCompleted } from './isTaskCompleted.js'
 import { addNote } from './noteModal.js'
-export function renderTasks () {
+export function renderTasks (activeProject) {
   const tasksList = document.querySelector('.tasks__list')
   let tasks = getTasksFromLocalStorage() || []
+  let projects = getProjectsFromLocalStorage() || []
+  let projectArr = Array.from(projects)
+
+  if (activeProject === undefined) {
+    activeProject = projectArr[0].projectName
+  }
+  /*
+  
+  activeproject=getactiveproject() <- function wthich return activeproject 
+  tasks filter (project === activeproject)
+  { */
+  let filteredTasks = tasks.filter(task => task.projectName === activeProject)
+  console.log(filteredTasks)
   tasksList.replaceChildren()
-  tasks.forEach(element => {
+  filteredTasks.forEach(element => {
     const taskEl = document.createElement('div')
     taskEl.className = 'task__element'
     tasksList.appendChild(taskEl)
