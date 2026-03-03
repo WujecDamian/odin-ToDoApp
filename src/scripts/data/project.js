@@ -13,7 +13,7 @@ export function createProject (projectName) {
     id: crypto.randomUUID(),
     projectName
   }
-  projects = getProjectsFromLocalStorage()
+  projects = [...projects, project]
   saveProjectLocalStorage(projects)
   return project
 }

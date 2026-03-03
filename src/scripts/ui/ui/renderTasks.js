@@ -17,6 +17,10 @@ export function renderTasks (activeProject) {
 
   tasksList.replaceChildren()
   /* if i don't want items to get removed i have to add display none (they will still be in dom) */
+  if (!Array.isArray(tasks)) {
+    console.error('tasks is not an array!', tasks)
+    tasks = [] // emergency reset
+  }
   tasks.forEach(element => {
     const taskEl = document.createElement('div')
     taskEl.className = 'task__element hidden'

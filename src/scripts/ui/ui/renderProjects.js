@@ -1,10 +1,19 @@
-import { getProjectsFromLocalStorage } from '../../data/storage.js'
+import {
+  getProjectsFromLocalStorage,
+  saveProjectLocalStorage
+} from '../../data/storage.js'
 import { deleteProject } from './deleteProject.js'
 import { setActiveProject } from './setActiveProject.js'
+import { createProject } from '../../data/project.js'
 export function renderProjects () {
   const projectsList = document.querySelector('.projects__list')
-  let projects = getProjectsFromLocalStorage()
+  let projects = getProjectsFromLocalStorage() || []
   projectsList.replaceChildren()
+  console.log(projects.length)
+  if (projects.length === 0) {
+    createProject('General')
+    projects = getProjectsFromLocalStorage()
+  }
   projects.forEach(element => {
     const projectEl = document.createElement('div')
     projectEl.className = 'project__element'
