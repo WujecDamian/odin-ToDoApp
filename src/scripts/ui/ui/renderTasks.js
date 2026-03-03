@@ -59,11 +59,11 @@ export function renderTasks (activeProject) {
     }
     const actionButtonWrapper = document.createElement('div')
     actionButtonWrapper.className = 'task__actionbuttons-wrapper'
-    const taskNote = document.createElement('input')
+    /* const taskNote = document.createElement('input')
     taskNote.type = 'button'
     taskNote.className = 'task__note'
     taskNote.value = 'note'
-    taskNote.addEventListener('click', addNote)
+    taskNote.addEventListener('click', addNote) */
     const taskDelete = document.createElement('input')
     taskDelete.type = 'button'
     taskDelete.className = 'task__delete'
@@ -77,7 +77,7 @@ export function renderTasks (activeProject) {
       taskCreationDate,
       taskDueDate
     )
-    actionButtonWrapper.append(taskNote, taskDelete)
+    actionButtonWrapper.append(taskDelete)
     taskButtonsWrapper.append(taskCheckbox, actionButtonWrapper)
     taskEl.append(taskTextWrapper, taskButtonsWrapper)
     tasksList.appendChild(taskEl)
