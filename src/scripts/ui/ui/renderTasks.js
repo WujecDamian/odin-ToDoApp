@@ -14,21 +14,19 @@ export function renderTasks (activeProject) {
   if (activeProject === undefined) {
     activeProject = projectArr[0].projectName
   }
-  /*
-  
-  activeproject=getactiveproject() <- function wthich return activeproject 
-  tasks filter (project === activeproject)
-  { */
-  let filteredTasks = tasks.filter(task => task.projectName === activeProject)
-  console.log(filteredTasks)
+
   tasksList.replaceChildren()
-  filteredTasks.forEach(element => {
+  /* if i don't want items to get removed i have to add display none (they will still be in dom) */
+  tasks.forEach(element => {
     const taskEl = document.createElement('div')
-    taskEl.className = 'task__element'
+    taskEl.className = 'task__element hidden'
     tasksList.appendChild(taskEl)
     /* text wrapper */
     const taskTextWrapper = document.createElement('div')
     taskTextWrapper.className = 'task__text-wrapper'
+    const taskProjectName = document.createElement('span')
+    taskProjectName.className = 'task__ProjectName hidden'
+    taskProjectName.innerText = element.projectName
     const taskTitle = document.createElement('h2')
     taskTitle.className = 'task__title'
     taskTitle.innerText = element.title
@@ -50,10 +48,10 @@ export function renderTasks (activeProject) {
     taskCheckbox.addEventListener('click', isTaskCompleted)
     if (element.isCompleted === true) {
       taskCheckbox.checked = true
-      taskEl.className = 'task__element completed'
+      taskEl.classList.add = 'completed'
     } else if (element.isCompleted === false) {
       taskCheckbox.checked = false
-      taskEl.className = 'task__element'
+      taskEl.classList.remove = 'completed'
     }
     const actionButtonWrapper = document.createElement('div')
     actionButtonWrapper.className = 'task__actionbuttons-wrapper'
@@ -69,6 +67,7 @@ export function renderTasks (activeProject) {
     taskDelete.addEventListener('click', deleteTask)
     /* appends */
     taskTextWrapper.append(
+      taskProjectName,
       taskTitle,
       taskDescription,
       taskCreationDate,
@@ -78,6 +77,18 @@ export function renderTasks (activeProject) {
     taskButtonsWrapper.append(taskCheckbox, actionButtonWrapper)
     taskEl.append(taskTextWrapper, taskButtonsWrapper)
     tasksList.appendChild(taskEl)
+  })
+
+  let filteredTasks = tasks.filter(task => task.projectName === activeProject)
+  console.log(filteredTasks.length)
+  const elements = document.querySelectorAll('.task__element')
+  let projectNameSpan = document.querySelectorAll('.task__ProjectName')
+  console.log(projectNameSpan)
+
+  projectNameSpan.forEach(span => {
+    if (span.innerText === activeProject) {
+      span.parentElement.parentElement.className = 'task__element'
+    }
   })
 }
 
