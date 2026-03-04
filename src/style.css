@@ -51,12 +51,18 @@ aside {
 main {
   display: flexbox;
   grid-area: 2/2/-1/-1;
-  margin: 0rem 0rem 2rem 0rem;
+  margin: 0rem 2rem 2rem 0rem;
 }
 dialog {
   align-self: center;
   justify-self: center;
+  border-radius: var(--b-radius);
+  background: var(--dark-gray);
+  border: 1px solid var(--accent);
   padding: 3rem;
+}
+::backdrop {
+  filter: blur(50px);
 }
 .add__button {
   cursor: pointer;
@@ -132,6 +138,7 @@ dialog {
   color: var(--light);
   margin-block: 1rem;
 }
+
 .task__element {
   display: flex;
   gap: 1rem;
@@ -139,9 +146,14 @@ dialog {
   background: var(--gray);
   padding: 1rem 2rem 1rem 2rem;
   border-radius: var(--b-radius);
+  filter: drop-shadow(-1px 0px 0.5px var(--accent));
+  transition: filter 0.2s ease-in-out;
   margin-bottom: 1rem;
   align-items: center;
   justify-content: space-between;
+}
+.task__element:hover {
+  filter: drop-shadow(-1px 0px 0.99px var(--accent));
 }
 .hidden {
   display: none;
@@ -149,6 +161,21 @@ dialog {
 .task__text-wrapper {
 }
 .task__title {
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+}
+.task__description {
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+  color: var(--light-dark);
+}
+.task__creationdate,
+.task__duedate {
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+  color: var(--light-dark);
+  font-style: oblique;
+  font-size: 0.8rem;
 }
 .task__buttons-wrapper {
   display: flex;
