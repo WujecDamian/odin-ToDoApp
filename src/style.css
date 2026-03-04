@@ -119,6 +119,11 @@ dialog {
 .project__delete img,
 .task__delete img {
   opacity: 0.2;
+  transition: opacity 0.15s ease-in-out;
+}
+.project__delete img:hover,
+.task__delete img:hover {
+  opacity: 0.5;
 }
 .tasks__list {
   display: flexbox;
@@ -132,22 +137,40 @@ dialog {
   gap: 1rem;
   color: white;
   background: var(--gray);
-  padding: 1rem;
+  padding: 1rem 2rem 1rem 2rem;
   border-radius: var(--b-radius);
   margin-bottom: 1rem;
+  align-items: center;
+  justify-content: space-between;
 }
 .hidden {
   display: none;
 }
 .task__text-wrapper {
 }
+.task__title {
+}
 .task__buttons-wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
+  gap: 1rem;
 }
 .task__checkbox {
   width: 3rem;
+  cursor: pointer;
   aspect-ratio: 1/1;
+  border-radius: var(--b-radius);
+  clip-path: circle(49% at 50% 50%);
+  appearance: none;
+  background: var(--dark-gray);
+  border: 2px solid var(--light-dark);
+}
+.task__checkbox:hover {
+  background: var(--gray);
+}
+.task__checkbox:checked {
+  appearance: none;
+  border: 2px solid var(--accent);
 }
 .completed {
   opacity: 0.3;
