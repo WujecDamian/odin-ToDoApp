@@ -1,5 +1,6 @@
 {
   "name": "webpack-template",
+  "homepage": "https://wujecdamian.github.io/odin-ToDoApp/",
   "version": "1.0.0",
   "description": "Basic template of webpack perfect for simple projects.",
   "main": "index.js",
