@@ -227,8 +227,8 @@ dialog::backdrop {
   border: 2px solid var(--accent);
 }
 .completed {
-  opacity: 0.3;
-  filter: grayscale(0.5);
+  opacity: 0.15;
+  filter: grayscale(0);
 }
 .task__actionbuttons-wrapper {
   display: flex;
