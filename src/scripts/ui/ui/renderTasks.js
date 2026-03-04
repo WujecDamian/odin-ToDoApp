@@ -5,6 +5,8 @@ import {
 import { deleteTask } from './deleteTask.js'
 import { isTaskCompleted } from './isTaskCompleted.js'
 import { addNote } from './noteModal.js'
+import deleteSvg from '../../../assets/delete.svg'
+
 export function renderTasks (activeProject) {
   const tasksList = document.querySelector('.tasks__list')
   let tasks = getTasksFromLocalStorage() || []
@@ -64,10 +66,11 @@ export function renderTasks (activeProject) {
     taskNote.className = 'task__note'
     taskNote.value = 'note'
     taskNote.addEventListener('click', addNote) */
-    const taskDelete = document.createElement('input')
-    taskDelete.type = 'button'
+    const taskDelete = document.createElement('button')
     taskDelete.className = 'task__delete'
-    taskDelete.value = 'Delete'
+    const deleteIcon = document.createElement('img')
+    deleteIcon.src = deleteSvg
+    taskDelete.append(deleteIcon)
     taskDelete.addEventListener('click', deleteTask)
     /* appends */
     taskTextWrapper.append(

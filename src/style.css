@@ -105,14 +105,19 @@ dialog {
 .project__text {
   font-style: oblique;
 }
-.project__delete {
+.project__delete,
+.task__delete {
   cursor: pointer;
   margin-left: auto;
   padding: 0.25rem 0.5rem;
   border: none;
   background-color: transparent;
 }
-.project__delete img {
+.task__delete {
+  padding: 0;
+}
+.project__delete img,
+.task__delete img {
   opacity: 0.2;
 }
 .tasks__list {
