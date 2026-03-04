@@ -1,5 +1,6 @@
 /* everything related to task [CRUD] */
 import { saveTaskLocalStorage, getTasksFromLocalStorage } from './storage.js'
+import { todayDate } from '../utils/date.js'
 /* create task object factory  */
 export let tasks = getTasksFromLocalStorage() || []
 
@@ -15,7 +16,7 @@ export function createTask (
     title,
     description,
     dueDate,
-    creationDate: '/* function from date.js */',
+    creationDate: todayDate(),
     notes: '', //User will be able to add notes (for now empty)
     isCompleted: false
   }

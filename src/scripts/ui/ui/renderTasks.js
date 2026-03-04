@@ -41,10 +41,10 @@ export function renderTasks (activeProject) {
     taskDescription.innerText = element.description
     const taskCreationDate = document.createElement('span')
     taskCreationDate.className = 'task__creationdate'
-    taskCreationDate.innerText = element.creationDate
+    taskCreationDate.innerText = `start: ${element.creationDate} `
     const taskDueDate = document.createElement('span')
     taskDueDate.className = 'task__duedate'
-    taskDueDate.innerText = element.dueDate
+    taskDueDate.innerText = `| end: ${element.dueDate}`
     /* button wrapper */
     const taskButtonsWrapper = document.createElement('div')
     taskButtonsWrapper.className = 'task__buttons-wrapper'
