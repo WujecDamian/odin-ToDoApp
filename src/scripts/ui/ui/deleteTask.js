@@ -10,8 +10,9 @@ export function deleteTask (e) {
   const deleteButtons = document.querySelectorAll('.task__delete')
   TasksList = Array.from(TasksList)
   let indexOfTask = TasksList.indexOf(
-    e.target.parentElement.parentElement.parentElement
+    e.target.parentElement.parentElement.parentElement.parentElement
   )
+
   Tasks.splice(indexOfTask, 1)
   saveTaskLocalStorage(Tasks)
   // Very important – sync the global variable too
